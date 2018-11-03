@@ -9,18 +9,21 @@ class App < Sinatra::Base
     end
 
     post '/teams' do
-      @team_name = params[:team][:name]
-      @team_motto = params[:team][:motto]
-      @hero_power = []
-      @hero_name = []
-      @hero_power = []
-      @hero_bio = []
-      @whole_team = params[:team][:members]
-      @whole_team.each do |i_hero|
-      @hero_name << i_hero[:name]
-      @hero_bio << i_hero[:bio]
-      @hero_power << i_hero[:power]
+    @team_name = params[:team][:name]
+    @team_motto = params[:team][:motto]
+    @hero_name = []
+    @hero_power = []
+    @hero_bio = []
+    @team_members = params[:team][:members]
+    @team_members.each do |hero|
+      @hero_name << hero[:name]
+      @hero_power << hero[:power]
+      @hero_bio << hero[:bio]
     end
+
+    erb :team
+  end
+end
 
       # Initial attempt without individual models:
       # @team = Team.new(params[:team][:name], params[:team][:motto])
@@ -30,7 +33,3 @@ class App < Sinatra::Base
       # end
       #
       # @members = Member.all
-
-      erb :team
-    end
-end
