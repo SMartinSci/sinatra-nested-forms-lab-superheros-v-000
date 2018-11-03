@@ -21,6 +21,7 @@ class App < Sinatra::Base
       @hero_bio << i_hero[:bio]
       @hero_power << i_hero[:power]
     end
+      # Initial attempt without individual models:
       # @team = Team.new(params[:team][:name], params[:team][:motto])
       #
       # params[:team][:members].each do |content|
