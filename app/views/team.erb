@@ -1,5 +1,5 @@
-<h1>Team Name:<%= team_name %></h1>
-<h1>Team Motto:<%= team_motto %></h1>
+<h1>Team Name:<%= @team.name %></h1>
+<h1>Team Motto:<%= @team.motto %></h1>
 
 <% @team_members.each.with_index do |hero, i| %>
 <h3>Hero Name: <%= @hero_name[i] %></h3><br>
