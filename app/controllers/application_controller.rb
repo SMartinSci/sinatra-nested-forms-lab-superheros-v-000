@@ -18,8 +18,6 @@ class App < Sinatra::Base
       @team_members = Team_member.all
 
 
-      erb :'teams'
+      erb :team
     end
-
-
 end
