@@ -18,18 +18,16 @@ class App < Sinatra::Base
       @whole_team = params[:team][:members]
       @whole_team.each do |i_hero|
       @hero_name << i_hero[:name]
-      @hero_power << i_hero[:power]
       @hero_bio << i_hero[:bio]
+      @hero_power << i_hero[:power]
 
-
-
-      @team = Team.new(params[:team][:name], params[:team][:motto])
-
-      params[:team][:members].each do |content|
-        Member.new(content[:name], content[:power], content[:bio])
-      end
-
-      @members = Member.all
+      # @team = Team.new(params[:team][:name], params[:team][:motto])
+      #
+      # params[:team][:members].each do |content|
+      #   Member.new(content[:name], content[:power], content[:bio])
+      # end
+      #
+      # @members = Member.all
 
       erb :team
     end
